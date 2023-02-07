@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
         - name: argoeks
-          image: 651010102653.dkr.ecr.ap-southeast-1.amazonaws.com/argoeks
-          version: latest
+          image: 651010102653.dkr.ecr.ap-southeast-1.amazonaws.com/argoeks:main-b38894c
           ports:
             - containerPort: 80
 
