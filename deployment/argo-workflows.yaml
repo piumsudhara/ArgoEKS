@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argoeks-deployment
+  labels:
+    app: argoeks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argoeks
+  template:
+    metadata:
+      labels:
+        app: argoeks
+    spec:
+      containers:
+        - name: argoeks
+          image: 651010102653.dkr.ecr.ap-southeast-1.amazonaws.com/argoeks
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: argoeks-svc
+spec:
+  selector:
+    app: argoeks
+  ports:
+    - port: 80
+      targetPort: 80
