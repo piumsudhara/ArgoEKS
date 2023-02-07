@@ -16,18 +16,12 @@ spec:
     spec:
       containers:
         - name: argoeks
-          image: 651010102653.dkr.ecr.ap-southeast-1.amazonaws.com/argoeks:main-b38894c
-          ports:
-            - containerPort: 80
-
+          image: 651010102653.dkr.ecr.ap-southeast-1.amazonaws.com/argoeks:main-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: argoeks-svc
 spec:
-  selector:
-    app: argoeks
-  ports:
-    - port: 80
-      targetPort: 80
+  type: LoadBalancer
+  port: 80
