@@ -2,12 +2,12 @@ replicaCount: 3
 image:
   pullPolicy: IfNotPresent
   repository: 651010102653.dkr.ecr.ap-southeast-1.amazonaws.com/argoeks
-  version: main-efcda17
+  version: main
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 serviceAccount:
-  create: true
+  create: false
   name:
 podSecurityContext: {}
 securityContext: {}
@@ -15,7 +15,7 @@ service:
   type: LoadBalancer
   port: 80
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
   hosts:
     - host: chart-example.local
